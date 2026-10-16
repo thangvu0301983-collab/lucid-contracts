@@ -1,0 +1,21 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+test = "test"
+script = "script"
+solc = "0.8.26"
+evm_version = "cancun"
+optimizer = true
+optimizer_runs = 1000
+via_ir = false
+bytecode_hash = "none"
+# Programmable review wants reproducible builds: pin solc, keep metadata stable.
+cbor_metadata = false
+fs_permissions = [{ access = "read", path = "./out" }, { access = "read-write", path = "./launch-out" }]
+
+[profile.default.fuzz]
+runs = 256
+
+[rpc_endpoints]
+mainnet = "${ETH_RPC_URL}"

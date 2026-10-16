@@ -1,0 +1,13 @@
+{
+  "name": "lucid-contracts",
+  "private": true,
+  "description": "LUCID: the token that dreams awake. Uniswap v4 hook, fair-launch launcher and token for the Programmable Ethereum Custom Launch.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "programmable:build": "node programmable/build.mjs"
+  },
+  "devDependencies": {
+    "solc": "0.8.26"
+  }
+}
