@@ -7,6 +7,23 @@ At dawn (06:00 UTC) the winning mood routes the fees: burn, rewards or deeper li
 This repository holds the exact sources of the launch graph submitted to the
 [Programmable](https://programmable.market) Ethereum Custom Launch (profile 3.6.0), plus the companion contracts.
 
+## Current launch: Programmable launch protection v1 (`protected/`)
+
+Programmable now requires every new native-ETH launch to use its sealed launch-protection package
+(`@programmable/launch` 4.1.7). LUCID launches on that exact package, unchanged, plus one LUCID contract:
+
+| Target | Contract | Role |
+|---|---|---|
+| `initializer` | `ProtectedNativeInitializerV1` (Programmable) | Checks the USD 15,000 opening floor on the Chainlink ETH/USD feed, places 100% of the supply as one locked position, makes the capped initial buy. |
+| `token` | `ProtectedLaunchTokenV1` (Programmable) | LUCID, 1,000,000,000 fixed supply. For 300 seconds every wallet can receive at most 2% of supply. |
+| `hook` | `ProtectedNative30HookV1` (Programmable) | 0.30% platform fee + fixed 2% creator fee on buys and sells; 99% opening buy fee decaying to zero in 30 seconds; 2% per-buyer cap for 300 seconds. Creates its fee vault, protection module and opening-tax vault. |
+| `vault` | `src/LucidVault.sol` (LUCID) | The hook's immutable creator-fee recipient: LUCID's nightly routing (60% by the Dream of the Night: burn, reward or deepen; 30% treasury; 10% holder rewards), capped holder rewards, guardian and safe mode. |
+
+Only one value differs from Programmable's own helper output: the creator-fee recipient is LucidVault instead of the
+launch wallet. `programmable/build-protected.mjs` reproduces the request; `test/LucidProtectedLaunch.fork.t.sol` runs the
+exact published bytecode on a mainnet fork. The earlier LUCID hook, launcher and token below are kept for reference;
+they are not part of the current launch.
+
 ## Launch graph (three CREATE2 targets, one transaction)
 
 | Target | Contract | Role |

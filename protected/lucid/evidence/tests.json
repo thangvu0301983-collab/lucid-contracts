@@ -1,0 +1,383 @@
+{
+  "schemaVersion": "lucid.forge-test-evidence.v1",
+  "status": "passed",
+  "forkTestsIncluded": true,
+  "passed": 75,
+  "results": [
+    {
+      "suite": "LucidDreamsTest",
+      "test": "test_cancel()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidDreamsTest",
+      "test": "test_cannotClaimTwice()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidDreamsTest",
+      "test": "test_claimGift()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidDreamsTest",
+      "test": "test_feeCap()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidDreamsTest",
+      "test": "test_listAndBuy()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidDreamsTest",
+      "test": "test_onlyOwnerAdmin()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidDreamsTest",
+      "test": "test_onlyOwnerCanList()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidDreamsTest",
+      "test": "test_royaltyAndInterfaces()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidDreamsTest",
+      "test": "test_transferClearsListing()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidDreamsTest",
+      "test": "test_voucherIsBoundToWallet()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidDreamsTest",
+      "test": "test_wrongPriceReverts()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_adultReachesFullRange()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_ageAloneDoesNotGrowTheMind()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_buyExactIn_feesOnGrossEthInput()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_buyExactOut_and_sellExactOut_charge()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_callbacksOnlyFromPoolManager()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_deadManSwitchNeedsSilence()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_distributeDefaultNightBurns()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_distributeJustBeforeSwitchGainsNothing()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_groundedInfantFeeClampedToNewborn()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_groundingDropsOneStageAndClampsFee()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_guardianRotatesAgent()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_infantBounds()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_launchFlinchDecays()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_newbornIsLocked()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_nightActionOncePerNightAndBounded()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_nightDeepenFeedsLiquidity()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_nightRewardKeepsMoodPotForSynapses()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_nightSwitchSettlesFeesEarnedUnderThePreviousNight()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_onlyAgentActs()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_permissionsAndBinding()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_platformFeeIsSetAtDeployment()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_platformFeeZeroOrAboveCapIsRejected()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_rejectsSecondPool()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_sellExactIn_feesOnGrossEthOutput()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_synapseRewardAndCaps()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "test_volumeAloneDoesNotGrowTheMind()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidHookTest",
+      "test": "testFuzz_platformFeeIsFloor3000ppm(uint96)",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidLauncherTest",
+      "test": "test_launchLocksTheWholeSupplyInThePool()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidLauncherTest",
+      "test": "test_nobodyCanTouchThePositionAfterwards()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidLauncherTest",
+      "test": "test_onlyTheDeployerOnlyOnce()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidLauncherTest",
+      "test": "test_rejectsMisalignedTick()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidLauncherTest",
+      "test": "test_theMarketTradesAfterLaunch()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidLaunchForkTest",
+      "test": "test_fork_fullLaunchThroughProgrammableRouter()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidLaunchForkTest",
+      "test": "test_fork_permitWithoutAuthoritySignatureIsRejected()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidNightAuctionTest",
+      "test": "test_bidsRefundAndSettleSplits()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidNightAuctionTest",
+      "test": "test_cannotBidAfterEnd()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidNightAuctionTest",
+      "test": "test_cannotStartWhileLiveThenNextNight()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidNightAuctionTest",
+      "test": "test_noBidsGoesToTreasury()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidNightAuctionTest",
+      "test": "test_onlyMindStarts()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidNightAuctionTest",
+      "test": "test_rejectingBidderGetsPullRefund()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidNightAuctionTest",
+      "test": "test_reserveAndLateBidExtends()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidNightAuctionTest",
+      "test": "test_startMintsIntoAuction()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidProtectedLaunchForkTest",
+      "test": "test_fork_initialBuyAbove2PercentReverts()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidProtectedLaunchForkTest",
+      "test": "test_fork_protectedLaunchAndVaultFeeFlow()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidTokenTest",
+      "test": "test_base64PaddingAllLengths()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidTokenTest",
+      "test": "test_metadataTuple()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidTokenTest",
+      "test": "test_rejectsNonHttpsLinks()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidTokenTest",
+      "test": "test_rejectsUnsafeOrShortDescription()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidTokenTest",
+      "test": "test_rejectsZeroLaunchWallet()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidTokenTest",
+      "test": "test_standardGettersAndSupply()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidTokenTest",
+      "test": "test_tokenURIIsInlineBase64Json()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_deepenRouteFeedsLiquidity()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_defaultRouteBurnsSixtyPercent()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_dreamKeepsAgentAlive()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_guardianRotations()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_nightCooldown()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_nightSwitchSettlesFeesEarnedUnderTheOldRoute()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_onlyAgentAndGuardian()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_reentrantRecipientCannotDoubleDistribute()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_rewardRouteKeepsMoodPotForHolders()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_safeModeByAnyoneOnlyAfterSevenSilentDays()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_safeModeByGuardianGroundsAgent()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_synapseCaps()",
+      "status": "Success"
+    },
+    {
+      "suite": "LucidVaultTest",
+      "test": "test_zeroAddressesRejected()",
+      "status": "Success"
+    }
+  ]
+}

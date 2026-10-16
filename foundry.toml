@@ -12,7 +12,7 @@ via_ir = false
 bytecode_hash = "none"
 # Programmable review wants reproducible builds: pin solc, keep metadata stable.
 cbor_metadata = false
-fs_permissions = [{ access = "read", path = "./out" }, { access = "read-write", path = "./launch-out" }]
+fs_permissions = [{ access = "read", path = "./out" }, { access = "read", path = "./test/fixtures" }, { access = "read-write", path = "./launch-out" }]
 
 [profile.default.fuzz]
 runs = 256
