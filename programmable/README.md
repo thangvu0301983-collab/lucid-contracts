@@ -19,12 +19,12 @@ npm install --global "$d/programmable-launch-4.1.6.tgz"
 | `GUARDIAN` | Guardian (a Safe): can ground the agent, set hook metadata. |
 | `AGENT` | The agent's hot wallet: sets the fee inside stage limits and the night action. |
 | `BUYBACK`, `TREASURY`, `LIQ` | Fee destinations (Safes). |
-| `PROJECT_DESCRIPTION` | Public description, also stored in the token forever. No quotes, backslashes or line breaks. |
+| `PROJECT_DESCRIPTION` | Optional override of `programmable/description.txt`: the full public disclosure, also stored in the token forever. No quotes, backslashes or line breaks. |
 | `WEBSITE_URL` | `https://` website, stored in the token forever. |
 | `IMAGE_URI` | Public `https://` URL serving exactly `assets/lucid-logo-1024.png` (CORS-readable), stored in the token forever. A commit-pinned `https://raw.githubusercontent.com/<owner>/<repo>/<commit>/assets/lucid-logo-1024.png` works. |
 | `X_URL` | Default `https://x.com/lucid_agent`. |
 | `SOURCE_URL`, `SOURCE_REVISION` | This public repository and the exact commit being submitted. |
-| optional | `INITIAL_BUY_WEI` (0.001 ETH), `LAUNCH_TICK` (196200), `PLATFORM_FEE_PPM` (3000), `PLATFORM_FEE_RECIPIENT` (`0xD88539d3c4C460136a733A3Fd60cf6BF269079da`), `APPLICANT_BUY_HBIP` (100000), `APPLICANT_SELL_HBIP` (30000), `VALID_AFTER` / `DEADLINE` (now, +24 h), `LAUNCH_NONCE` (random). |
+| optional | `INITIAL_BUY_WEI` (0.001 ETH), `LAUNCH_TICK` (196200), `PLATFORM_FEE_PPM` (3000), `PLATFORM_FEE_RECIPIENT` (`0xD88539d3c4C460136a733A3Fd60cf6BF269079da`), `APPLICANT_BUY_HBIP` (40000), `APPLICANT_SELL_HBIP` (30000), `VALID_AFTER` / `DEADLINE` (now, +24 h), `LAUNCH_NONCE` (random). |
 
 The platform fee values must equal `currentTradeFeePolicy` in https://api.programmable.market/v3/capabilities
 at packing time; the CLI refuses a mismatching payout recipient.

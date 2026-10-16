@@ -66,7 +66,10 @@ const launchTick = Number(uintStr("LAUNCH_TICK", "196200"));
 if (launchTick % TICK_SPACING !== 0) fail("LAUNCH_TICK must be a multiple of 60");
 if (initialBuyWei === "0") fail("INITIAL_BUY_WEI must be nonzero (funding mode wallet-transaction-value)");
 
-const description = need("PROJECT_DESCRIPTION").normalize("NFC").trim();
+// Full public disclosure (fees, opening schedule, maxima, powers). Also stored in the token forever.
+const description = (env.PROJECT_DESCRIPTION ?? readFileSync(rel(env.PROJECT_DESCRIPTION_FILE ?? "programmable/description.txt"), "utf8"))
+  .normalize("NFC")
+  .trim();
 if (/["\\\u0000-\u001f\u007f]/u.test(description)) fail("PROJECT_DESCRIPTION: no quotes, backslashes or line breaks");
 const website = need("WEBSITE_URL");
 const imageUri = need("IMAGE_URI");
@@ -91,9 +94,9 @@ const deadline = uintStr("DEADLINE", String(Number(validAfter) + 86_400)); // th
 if (BigInt(deadline) - BigInt(validAfter) > 86_400n) fail("DEADLINE - VALID_AFTER must be <= 86400");
 
 // Declared project fee, hundredths of a bip (1% = 10000). LUCID's fee is agent-set within on-chain stage limits:
-// at most 3% steady state, and a buy right at launch pays up to +9% extra (the launch flinch, decaying to 0 in
-// 15 minutes), so the declaration states the maxima the hook can ever charge.
-const applicantBuy = uintStr("APPLICANT_BUY_HBIP", "100000");
+// at most 3% steady state, and a buy right at launch pays up to +3% extra over the 1% launch fee (the launch
+// flinch, decaying to 0 in 5 minutes), so the declaration states the maxima the hook can ever charge.
+const applicantBuy = uintStr("APPLICANT_BUY_HBIP", "40000");
 const applicantSell = uintStr("APPLICANT_SELL_HBIP", "30000");
 
 // ------------------------------------------------------------------ Standard JSON (same settings as foundry.toml)

@@ -206,9 +206,9 @@ contract LucidHookTest is Deployers {
 
     function test_launchFlinchDecays() public {
         vm.warp(hook.launchedAt());
-        assertEq(hook.currentBuyFeeBps(), 100 + 900);
+        assertEq(hook.currentBuyFeeBps(), 100 + 300);
         vm.warp(hook.launchedAt() + hook.FLINCH_DURATION() / 2);
-        assertEq(hook.currentBuyFeeBps(), 100 + 450);
+        assertEq(hook.currentBuyFeeBps(), 100 + 150);
         vm.warp(hook.launchedAt() + hook.FLINCH_DURATION());
         assertEq(hook.currentBuyFeeBps(), 100);
         assertEq(hook.currentSellFeeBps(), 100);

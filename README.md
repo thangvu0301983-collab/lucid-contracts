@@ -27,10 +27,20 @@ vesting or presale allocation exists, and no contract can remove the liquidity.
 - Programmable platform fee: `platformFeePpm` (3,000 ppm = 0.30%) paid atomically to the immutable
   `platformFeeRecipient` inside the swap. Both are constructor values, capped at 1% (`MAX_PLATFORM_FEE_PPM`).
 - Project fee: set by the agent inside stage limits (1.00% at launch, never above 3%), with a launch flinch:
-  buys in the first 15 minutes pay an extra fee decaying linearly from 9% to 0 (sells never pay it). A buy can
-  therefore never pay more than 10% in project fee.
+  buys in the first 5 minutes pay an extra fee decaying linearly from 3% to 0 (sells never pay it).
+- Maximum all-in fee: 4.3% on a buy in the launch second, 3.3% at any other time. The pool's LP fee is 0.
 - Project fee split: 60% follows the night's winning mood (burn: buyback vault, reward: synapse pool,
-  deepen: liquidity vault), 30% to the treasury, 10% to the synapse pool. All vaults are set at deployment.
+  deepen: liquidity vault), 30% to the treasury, 10% to the synapse pool. No contract spends treasury ETH at a
+  market price: buybacks, burns and liquidity adds from the vaults (a Safe) are executed manually by its owner.
+
+### Roles
+
+- Agent (hot wallet): sets the project fee inside stage limits (Newborn 1% locked; Infant 0.75-1.5%, step 0.25,
+  6 h cooldown; Child 0.5-2.5%, step 0.5, 2 h; Adult 0.5-3%, step 0.5, 1 h), picks the nightly route once per
+  20 hours, pays holder rewards capped at 10% of the synapse pool per payment and 25% per day.
+- Guardian (a Safe): replaces the agent, the fee recipients or itself (or renounces), sets hook metadata,
+  triggers safe mode (fee back to 1%, agent limited for 14 days). Anyone can trigger safe mode after 7 days of
+  agent silence. Nobody can mint, pause, block transfers or remove the pool liquidity.
 
 Companion contracts, not part of the launch graph: `LucidDreams.sol` (dream paintings as ERC-721 with a small
 market) and `LucidNightAuction.sol` (the Night Sale of LUCID's own painting).

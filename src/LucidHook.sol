@@ -50,8 +50,8 @@ contract LucidHook is IHooks {
     uint16 public constant DEFAULT_FEE_BPS = 100; // 1.00%
 
     // Launch flinch: extra fee on buys, decaying linearly to zero.
-    uint16 public constant FLINCH_START_BPS = 900; // +9% at t=0, so a launch buy never pays more than 10% in project fee
-    uint32 public constant FLINCH_DURATION = 15 minutes;
+    uint16 public constant FLINCH_START_BPS = 300; // +3% at t=0, falling linearly to 0: a launch buy pays at most 4% project fee
+    uint32 public constant FLINCH_DURATION = 5 minutes;
 
     // Growth stages
     uint8 public constant EMBRYO = 0; // before the pool exists
