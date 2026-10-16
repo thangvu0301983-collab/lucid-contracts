@@ -10,3 +10,5 @@ evidence/
 programmable-launch.config.json
 launch.json
 .env*
+launch.json.receipt.json
+*.receipt.json
