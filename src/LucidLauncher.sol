@@ -129,7 +129,8 @@ contract LucidLauncher is IUnlockCallback {
     }
 
     function unlockCallback(bytes calldata data) external returns (bytes memory) {
-        if (msg.sender != address(poolManager) || !_inLaunch) revert NotPoolManager();
+        if (msg.sender != address(poolManager)) revert NotPoolManager();
+        if (!_inLaunch) revert NotPoolManager();
         (address buyRecipient, uint256 buyValue) = abi.decode(data, (address, uint256));
         PoolKey memory key = poolKey;
         _placeWholeSupply(key);
