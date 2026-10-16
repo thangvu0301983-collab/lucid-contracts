@@ -245,7 +245,8 @@ const targets = [
   { ...base("vault", vault, "lucid-vault", "lucid/artifacts/vault.json", "other"),
     constructorArguments: [roles.guardian, roles.agent, roles.buyback, roles.treasury, roles.liquidity] },
 ];
-const cfg = { schemaVersion: "programmable.launch-pack-config.v3", profileVersion: "3.6.0", chainId: "1", launchWallet, nonce,
+// No profileVersion: the CLI then binds the live /v3/capabilities profile (3.6.0) and its exact fee policy.
+const cfg = { schemaVersion: "programmable.launch-pack-config.v3", chainId: "1", launchWallet, nonce,
   source: { root: ".", paths: sourcePaths, sourceLineageNonce: env.SOURCE_LINEAGE_NONCE ?? "1", publicOrigin: { url: sourceUrl, revision } },
   compilationUnits: [{ compilationUnitId: "launch-protection-v1", standardJson: "protection/standard-json.json" },
     { compilationUnitId: "lucid-vault", standardJson: "lucid/standard-json.json" }],
