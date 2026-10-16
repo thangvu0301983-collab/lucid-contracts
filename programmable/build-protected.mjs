@@ -257,7 +257,11 @@ const cfg = { schemaVersion: "programmable.launch-pack-config.v3", chainId: "1",
       { checkId: "lucid-vault-and-protected-fork-tests", evidence: "lucid/evidence/tests.json" }] } };
 const configPath = path.join(root, "protected-launch.config.json");
 await writeFile(configPath, JSON.stringify(cfg, null, 2) + "\n");
-const built = await buildLaunch({ configPath, directNativeTradeFeePolicy: capabilities.programmableTradeFeePolicy?.policy });
+// Library check with the explicit live profile (the CLI resolves the same profile from capabilities).
+const checkPath = path.join(root, ".protected-launch.check.json");
+await writeFile(checkPath, JSON.stringify({ ...cfg, profileVersion: "3.6.0" }, null, 2) + "\n");
+const built = await buildLaunch({ configPath: checkPath, directNativeTradeFeePolicy: capabilities.programmableTradeFeePolicy?.policy });
+await (await import("node:fs/promises")).unlink(checkPath);
 for (const [role, d] of Object.entries({ initializer: init, token, hook, vault })) {
   if (built.predictions.find((x) => x.targetId === role)?.predictedAddress.toLowerCase() !== d.address.toLowerCase()) fail("prediction differs for " + role);
 }
